@@ -36,4 +36,10 @@ public class SolicitudAcceso {
 
     private LocalDateTime fechaCreacion;
 
+    @PrePersist
+    public void prePersist() {
+        this.fechaCreacion = LocalDateTime.now();
+        this.estado = "PENDIENTE";
+    }
+
 }
